@@ -4,8 +4,8 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128da48-freertos-blinky-mplab-mcc",
-        "version": " ",
-        "displayName": "",
+        "version": "1.0.0",
+        "displayName": "LED Blinky Using AVR® DA Microcontroller and FreeRTOS",
         "projectName": "avr128da48-freertos-blinky-mplab-mcc",
         "shortDescription": "This repository provides an MPLAB X project that shows how to use the FreeRTOS library to create a basic demo application that toggles a LED on AVR128DA48 microcontroller.",
         "ide": {
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "AVR-Dx_DFP",
+            "semverRange": "^2.6.303"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.7.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -36,9 +36,17 @@
                 "versionRange": "*"
             }
         },
-        "author": "Prasad Aradhya",
-        "peripherals": [],
-        "keywords": [],
+        "author": "Gabriel Urs",
+        "peripherals": [
+            "FreeRTOS",
+            "TCB0"
+        ],
+        "keywords": [
+            "FreeRTOS",
+            "Getting Started",
+            "TCB0",
+            "LED"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
