@@ -39,12 +39,12 @@
         "author": "Gabriel Urs",
         "peripherals": [
             "FreeRTOS",
-            "TCB0"
+            "TCB"
         ],
         "keywords": [
             "FreeRTOS",
             "Getting Started",
-            "TCB0",
+            "TCB",
             "LED"
         ],
         "additionalData": {
