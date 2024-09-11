@@ -4,9 +4,9 @@
 
 # LED Blinky Using AVR DA Microcontroller and FreeRTOS
 
-The blinky project is a basic example that shows how to get a FreeRTOS project using the MCC Melody library. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as starting point for an RTOS application.
+The blinky project is a basic example that shows how to get a FreeRTOS project using the MCC Melody library. The MCC Melody generated project offers a seamless integration of the FreeRTOS kernel files and port files, by providing a basic project structure that can be used as a starting point for an RTOS application.
 
-As a minimum, the [<strong>blinky project</strong>](avr128da48_cnano_freertos_blinky_melody.X) will demonstrate how to use a [<strong>FreeRTOS queue</strong>](https://www.freertos.org/Embedded-RTOS-Queues.html) to pass a value between two tasks and toggling an LED each time the value is received.
+As a minimum, the [<strong>blinky project</strong>](avr128da48-freertos-blinky-mplab-mcc.X) will demonstrate how to use a [<strong>FreeRTOS queue</strong>](https://www.freertos.org/Embedded-RTOS-Queues.html) to pass a value between two tasks and toggling an LED each time the value is received.
 
 The project is contained in a single source file (<strong>freertos_interface.c</strong>) as following:
 
@@ -25,10 +25,10 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 ## Software Used
 
-- MPLAB X IDE 6.20 or newer [(microchip.com/mplab/mplab-x-ide)](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
-- MPLAB XC8 2.46 or a newer compiler [(microchip.com/mplab/compilers)](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
-- MPLAB Code Configurator (MCC) 5.7.1 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
-- AVR-Dx 2.6.303 or newer Device Pack [(https://packs.download.microchip.com)](https://packs.download.microchip.com/#collapse-Microchip-AVR-Dx-DFP-pdsc)
+- [MPLAB X IDE 6.20 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
+- [MPLAB XC8 2.46 or a newer compiler](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
+- [MPLAB Code Configurator (MCC) 5.7.1 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_AVR-DA&utm_content=avr128da48-freertos-blinky-mplab-mcc-github&utm_bu=MCU08)
+- [AVR-Dx 2.6.303 or newer Device Pack](https://packs.download.microchip.com/#collapse-Microchip-AVR-Dx-DFP-pdsc)
 
 ## MCC Configuration
 
@@ -47,36 +47,36 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 The following configurations must be made for this project:
 
-1. Add FreeRTOS library to the project
+1. Add FreeRTOS library to the project.
 
 <br><img src="images/add-freertos-library.png" width="800">
 
-2. Configure FreeRTOS application: <br>
-    2.1 Select timer instance used as TIck Timer (TCB0 in this example) <br>
-    2.2 Configure the desired Tick Rate  <br>
-    2.3 Update the FreeRTOS configuration using the UI <br>
-    2.4 Enable GPIO pins used by the FreeRTOS application (GPIO0) <br>
-    2.5 Select the corresponding pin used as GPIO0 by the FreeRTOS application (PC6, Curiosity NANO on-board LED0) <br>
+2. Configure the FreeRTOS application: <br>
+    2.1 Select timer instance used as Tick Timer (TCB0 in this example). <br>
+    2.2 Configure the desired Tick Rate.  <br>
+    2.3 Update the FreeRTOS configuration using the UI. <br>
+    2.4 Enable GPIO pins used by the FreeRTOS application (GPIO0). <br>
+    2.5 Select the corresponding pin used as GPIO0 by the FreeRTOS application (PC6, Curiosity NANO on-board LED0). <br>
  
 <br><img src="images/select-tick-timer.png" width="800">
 
 <br><img src="images/select-gpio-1.png" width="800">
 
-4. Select the on-board LED (PC6) as GPIO0 pin that is used by the FreeRTOS library
+3. Select the on-board LED (PC6) as GPIO0 pin that is used by the FreeRTOS library.
 
 <br><img src="images/select-gpio-2.png" width="800">
 
-5. Generate the code using MCC Melody
+4. Generate the code using MCC Melody.
 
-6. Add the demo application code in the freertos_interface.c file
+5. Add the demo application code in the `freertos_interface.c` file.
 
-7. For information about the programming the device, see the Operation section in this document
+6. For information about the programming the device, see the Operation section in this document.
 
 | Pin |     Configuration     |
 | :-: | :-------------------: |
 | PC6 | Digital Output (LED0) |
 
-In order to configure the toggling period for the on-board LED the macro below can be modified. In the default case, this period is configured to 200 ms:
+In order to configure the toggling period for the on-board LED, the macro below can be modified. In the default case, this period is configured to 200 ms:
 
 <br><img src="images/configure-period.png" width="600">
 
